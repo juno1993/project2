@@ -3,9 +3,13 @@
     <div style="margin-bottom:40px;">
       <h2 class="size-30">중고 폰 사기</h2>
       <div class="flex-align" style="padding: 20px 0">
-        <div class="product-cat unselect size-14" v-for="(cat, cat_idx) in catArr" :key="`cat-${cat_idx}`" @click="clickCat(cat)">{{ cat.name }}</div>
+        <div class="product-cat unselect size-14"
+             :style="selectedCatStyle(cat.id)"
+             v-for="(cat, cat_idx) in catArr"
+             :key="`cat-${cat_idx}`"
+             @click="clickCat(cat)">{{ cat.name }}</div>
       </div>
-      <div>상품 수 {{ allCount }}개</div>
+      <div>검색된 상품 수 {{ filteredCount }}개</div>
     </div>
     <div class="flex-align wrap">
       <div class="col-3 unselect" style="padding:12px;" v-for="(product, product_idx) in products" :key="`product-${product_idx}`">
@@ -52,11 +56,18 @@
       this.getProduct();
     },
     methods: {
+      selectedCatStyle (cat_id) {
+        if(this.selectedCategory===cat_id) {
+          return {
+            fontWeight: 'bold'
+          }
+        }
+      },
       imgUrl(img) {
         return 'https://image.zdnet.co.kr/2020/05/26/sini_oQkjfdNyuNqhztt.jpg'
       },
       getCategory() {
-        this.$axios.get('product/category').then(res => {
+        this.$axios.get('product/category?all=true').then(res => {
           this.catArr = res.data;
         })
       },
@@ -67,7 +78,7 @@
       getProduct () {
         let url = 'product';
         if(this.selectedCategory) {
-          url += `?category1_id=${this.selectedCategory}`;
+          url += `?category1=${this.selectedCategory}`;
         }
         this.$axios.get(url, {
           params: this.filtered
