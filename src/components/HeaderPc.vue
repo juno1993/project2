@@ -1,16 +1,17 @@
 <template>
   <div class="header-wrapper flex-between">
     <div>
-      <b class="header-item size-30" @click="$router.replace('home')">소녀폰</b>
+      <b class="header-item size-30" @click="$router.replace('home')">중고폰 구매 개발중</b>
     </div>
 
     <div class="flex-align">
-      <div class="header-item size-18">마이페이지</div>
-      <div class="header-item size-18">1:1문의</div>
-      <div class="header-item size-18">공지사항</div>
-      <div class="header-item size-18">이벤트</div>
-      <div class="header-item size-18" @click="$router.push('product')">중고 폰 사기</div>
-      <div class="header-item size-18">자주 찾는 질문</div>
+      <!--<div class="header-item size-18">마이페이지</div>-->
+      <!--<div class="header-item size-18">1:1문의</div>-->
+      <!--<div class="header-item size-18">공지사항</div>-->
+      <!--<div class="header-item size-18">이벤트</div>-->
+      <div class="header-item size-18" @click="$router.push('product')">중고 폰 구매</div>
+      <!--<div class="header-item size-18" @click="$router.push('sell_product')">내 폰 팔기</div>-->
+      <!--<div class="header-item size-18">자주 찾는 질문</div>-->
     </div>
 
     <div class="flex-align">

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container" style="padding: 45px 0 45px 0">
     <div style="margin-bottom:40px;">
       <h2 class="size-30">중고 폰 사기</h2>
       <div class="flex-align" style="padding: 20px 0">

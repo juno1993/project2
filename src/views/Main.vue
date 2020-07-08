@@ -3,7 +3,7 @@
     <!-- header -->
     <header-pc></header-pc>
 
-    <router-view class="container"></router-view>
+    <router-view></router-view>
 
     <!-- footer -->
     <footer></footer>
