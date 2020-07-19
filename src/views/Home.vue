@@ -1,5 +1,5 @@
 <template>
-  <div style="padding: 45px 0 45px 0">
+  <div class="j-layout">
     <!-- 배너 -->
     <banner></banner>
     <div class="container">

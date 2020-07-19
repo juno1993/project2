@@ -7,6 +7,7 @@ import axios from 'axios'
 import {currency, currencyNum, currencyWon, currencyKor, thousand} from './filter.js'
 require('@/assets/css/main.styl')
 
+
 Vue.filter('currency', currency)
 Vue.filter('currencyNum', currencyNum)
 Vue.filter('currencyWon', currencyWon)
