@@ -18,11 +18,11 @@
 </template>
 
 <script>
-  import Pagination from "../components/Pagination";
+  import Pagination from "../Pagination";
 
   export default {
     components: {Pagination},
-    name: 'ExhibitionProduct',
+    name: 'BlockExhibitionProduct',
     props: {
       list: {
         type: Array,

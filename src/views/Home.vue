@@ -31,14 +31,14 @@
 // @ is an alias to /src
 // import HelloWorld from '@/components/HelloWorld.vue'
 import Product from "./Product";
-import ExhibitionProduct from "./ExhibitionProduct";
+import BlockExhibitionProduct from "@/components/Block/BlockExhibitionProduct";
 import Banner from "../components/Banner";
 
 export default {
   name: 'Home',
   components: {
     Banner,
-    ExhibitionProduct,
+    BlockExhibitionProduct,
     Product
   },
   data () {

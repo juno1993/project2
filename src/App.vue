@@ -1,15 +1,19 @@
 <template>
   <div id="app" :style="appStyle">
-    <!--<div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>-->
     <router-view/>
+    <toast/>
+    <loading-spinner v-if="$store.getters.loadingSpinner"></loading-spinner>
   </div>
 </template>
 
 <script>
+  import Toast from "./components/Common/Toast";
+  import LoadingSpinner from "./components/Common/LoadingSpinner";
 export default {
+  components: {
+    Toast,
+    LoadingSpinner
+  },
   name: 'App',
   data () {
     return {
