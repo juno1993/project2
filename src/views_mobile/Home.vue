@@ -1,5 +1,5 @@
 <template>
-  <div class="j-layout">
+  <div class="mobile-wrapper">
     <page-header>
       <i class="material-icons header-icon" slot="left">home</i>
       <span class="header-title" slot="center">착한중고</span>

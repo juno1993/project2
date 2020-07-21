@@ -1,5 +1,5 @@
 <template>
-    <div class="j-layout">
+    <div class="pc-wrapper">
       <input-img :url.sync="user.profile"></input-img>
       <div @click="saveData">저장</div>
     </div>

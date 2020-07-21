@@ -1,5 +1,5 @@
 <template>
-  <div class="j-layout">
+  <div class="pc-wrapper">
     <!-- 배너 -->
     <banner></banner>
     <div class="container">
