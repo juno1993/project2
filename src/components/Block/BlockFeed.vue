@@ -17,7 +17,7 @@
     </div>
   </div>
 </template>
-
+p
 <script>
   var EXIF = require('exif-js');
   export default {

@@ -51,6 +51,9 @@ Vue.mixin({
     }
   },
   computed: {
+    user() {
+      return this.$store.getters.user;
+    },
     radius() {
       return '0px';
     },

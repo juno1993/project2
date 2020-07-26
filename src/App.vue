@@ -33,9 +33,9 @@ export default {
     this.$axios.defaults.baseURL = this.backendUrl;
     this.$axios.defaults.headers.post["Content-Type"] = "application/json; charset=utf-8"
     // this.$axios.defaults.headers.get["Content-Type"] = "application/json; charset=utf-8"
-    if (this.$route.path === '/') {
-      this.$router.replace('/home')
-    }
+    // if (this.$route.path === '/') {
+    //   this.$router.replace('/home')
+    // }
   }
 }
 </script>

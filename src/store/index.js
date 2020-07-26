@@ -30,7 +30,10 @@ export default new Vuex.Store({
     },
     setUser (state, value) {
       state.user = value;
-    }
+    },
+    logout(state) {
+      state.user = { user_id:0, name: '' };
+    },
   },
   getters: {
     loadingSpinner: state => {
