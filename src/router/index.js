@@ -25,6 +25,7 @@ if (navigator.userAgent.match(/Android/i)
     || navigator.userAgent.match(/BlackBerry/i)
     || navigator.userAgent.match(/Windows Phone/i)
 ) {
+  // 모바일 페이지
   routes = [
     {
       path: '/',
@@ -33,10 +34,12 @@ if (navigator.userAgent.match(/Android/i)
         { path: '/home', name: 'Home', component: loadMobile('Home') },
         { path: '/login', component: loadMobile('Login') },
         { path: '/mypage', component: loadMobile('MyPage') },
+        { path: '/feed_create', component: loadMobile('FeedCreate') },
       ]
     }
   ]
 }
+// PC 페이지
 else {
   if(window.innerWidth>420) {
     routes = [

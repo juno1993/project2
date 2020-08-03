@@ -1,9 +1,5 @@
 <template>
   <div style="padding-bottom: 50px">
-    <input type="file"
-           @input="onUploadFile($event)"
-           accept="*">
-
     <div v-for="(item, idx) in list" :key="`feed-${idx}`">
       <div class="flex-align feed-header">
         <div :style="profileImage(item.author.user.profile)"></div>
@@ -17,9 +13,7 @@
     </div>
   </div>
 </template>
-p
 <script>
-  var EXIF = require('exif-js');
   export default {
     name: "BlockFeed",
     data() {
@@ -44,20 +38,6 @@ p
         this.$axios.get(`user/0/feed`).then(res => {
           this.list = res.data.data;
         })
-      },
-      onUploadFile (evt) {
-        console.log(evt.target);
-
-        let file = evt.target.files[0];
-        EXIF.getData(file, function() {
-          var allMetaData = EXIF.getAllTags(this);
-          console.log('metadata',allMetaData)
-          //  Make: "samsung"
-          //  Model: "SM-N950N"
-          //  SceneCaptureType: "Standard"
-          //  WhiteBalance: "Auto white balance"
-          //  ISOSpeedRatings: 50
-        });
       }
     }
   }

@@ -33,7 +33,7 @@ export default {
         {
           icon: 'add_circle_outline',
           name: '게시물작성',
-          link: 'add_circle_outline'
+          link: 'feed_create'
         },
         {
           icon: 'favorite',

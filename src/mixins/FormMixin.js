@@ -383,18 +383,18 @@ export default {
         return this.inputTimeStyle;
 
       let deco = {
-        border: 0,
+        border: this.brandBorder.main.border,
         padding: '12px',
         fontSize: '14px'
       };
 
       switch (this.formType && this.formType.input) {
         case 'round':
-          deco.borderRadius = this.radius.borderRadius;
-          deco.border = `1px solid ${this.brandBorder.main}`;
+          deco.borderRadius = this.radius;
+          deco.border = this.brandBorder.main.border;
           break;
         case 'underline':
-          deco.borderBottom = `1px solid ${this.brandBorder.main}`;
+          deco.borderBottom = this.brandBorder.main;
           break;
       }
 

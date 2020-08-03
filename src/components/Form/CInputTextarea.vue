@@ -78,6 +78,11 @@
         type: Number,
         required: false,
         default: 7
+      },
+      placeholder: {
+        type: String,
+        required: false,
+        default: ''
       }
     },
 

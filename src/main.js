@@ -44,9 +44,9 @@ Vue.mixin({
       },
       // 테두리선
       brandBorder: {
-        brand: { border: `1px solid '#000000` },
-        main: { border: `1px solid '#000000` },
-        sub: { border: `1px solid '#000000` },
+        brand: { border: `1px solid #000000` },
+        main: { border: `1px solid #000000` },
+        sub: { border: `1px solid #000000` },
       }
     }
   },
