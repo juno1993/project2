@@ -5,7 +5,7 @@
       <span class="header-title" slot="center">마이페이지</span>
     </page-header>
     <!-- 내 정보 -->
-    <div style="padding:15px">
+    <div :style="[pagePadding]">
       <div class="flex-align">
         <div class="col-3">
           <div :style="profileImage"></div>
@@ -27,16 +27,21 @@
       </div>
       <div style="margin-top:8px">{{ user.username }}</div>
       <div>{{ user.name }}</div>
-      <div class="mypage-btn">프로필 수정</div>
+      <div class="mypage-btn" @click="$router.push('profile')">프로필 수정</div>
       <div class="mypage-btn" @click="$refs.logoutModal.open()">로그아웃</div>
     </div>
+
+    <!-- 내가 올린 게시물   -->
+    <div>
+      <block-my-feed></block-my-feed>
+    </div>
+
     <!-- 메뉴 -->
     <div v-for="(item, idx) in menu" :key="`menu-${idx}`">
 
     </div>
 
     <!-- 로그아웃 -->
-    <sweet-modal
     <sweet-modal ref="logoutModal" overlay-theme="dark">
       <modal @confirm="logout" @cancel="$refs.logoutModal.close()">
         <div slot="header">로그아웃</div>
@@ -51,10 +56,12 @@
   import PageMixin from "@/mixins/mobile/PageMixin"
   import PageHeader from "../components/Common/PageHeader";
   import Modal from "../components/Common/Modal";
+  import BlockMyFeed from "../components/Block/BlockMyFeed";
 
   export default {
     name: "MyPage",
     components: {
+      BlockMyFeed,
       Modal,
       PageHeader,
       SweetModal

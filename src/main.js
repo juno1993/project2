@@ -44,9 +44,9 @@ Vue.mixin({
       },
       // 테두리선
       brandBorder: {
-        brand: { border: `1px solid #000000` },
-        main: { border: `1px solid #000000` },
-        sub: { border: `1px solid #000000` },
+        brand: { color: `#000000` },
+        main: { color: `#000000` },
+        sub: { color: `#000000` },
       }
     }
   },
@@ -62,14 +62,18 @@ Vue.mixin({
       return this.$store.getters.user.user_id > 0;
     },
     pagePadding() {
-      let padding = '16px';
       return {
-        paddingLeft: padding,
-        paddingRight: padding
+        padding: '16px'
       }
     },
   },
   methods: {
+    image(img) {
+      if (!img) return '';
+      else return img;
+      // if (img.search('http') === -1 && img.search('base64,') === -1)
+      //   return this.backendUrl + img;
+    },
     toast(msg) {
       this.$root.$emit('toast', msg);
     },

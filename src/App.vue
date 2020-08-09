@@ -32,6 +32,7 @@ export default {
     this.backendUrl = process.env.VUE_APP_BACKEND_URL;
     this.$axios.defaults.baseURL = this.backendUrl;
     this.$axios.defaults.headers.post["Content-Type"] = "application/json; charset=utf-8"
+    this.setAuthHeader()
     // this.$axios.defaults.headers.get["Content-Type"] = "application/json; charset=utf-8"
     // if (this.$route.path === '/') {
     //   this.$router.replace('/home')

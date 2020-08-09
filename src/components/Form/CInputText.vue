@@ -2,7 +2,7 @@
   <div :style="containerStyle">
 
     <!-- 레이블 -->
-    <div v-if="formType.label && label" :style="labelStyle">{{ label }}</div>
+    <div v-if="label" :style="labelStyle">{{ label }}</div>
 
     <!-- 인풋 -->
     <div class="flex-align
@@ -64,6 +64,16 @@
     ],
 
     props: {
+      disabled: {
+        type: Boolean,
+        required: false,
+        default: false
+      },
+      value: {
+        type: String,
+        required: false,
+        default: ''
+      },
       type: {
         type: String,
         required: false,
@@ -75,9 +85,25 @@
       },
       validate: {
         type: Object,
-        required: false
+        required: false,
+        default: function () {
+          return {
+            valid_required: false,
+            error_msg: '',
+            max_length:100,
+            min_length:0,
+            alpha_s: true,
+            alpha_g: true,
+            special: true,
+            num: true
+          }
+        }
       },
       prefix: {
+        type: String,
+        required: false
+      },
+      label: {
         type: String,
         required: false
       }
@@ -104,16 +130,6 @@
         inputValue: '',
         errorMsg: '',
         keyup: false,
-        valid: {
-          valid_required: false,
-          error_msg: '',
-          max_length:100,
-          min_length:0,
-          alpha_s: true,
-          alpha_g: true,
-          special: true,
-          num: true
-        },
         computedInputStyle: undefined
       };
     },
@@ -125,6 +141,16 @@
     },
 
     computed: {
+      labelStyle () {
+        return {
+          marginBottom: '12px'
+        }
+      },
+      containerStyle () {
+        return {
+          marginBottom: '12px'
+        }
+      },
       maxLength() {
         if (this.validate)
           return this.validate.max_length ? this.validate.max_length : 50;
@@ -154,7 +180,7 @@
     methods: {
       computeInputStyle() {
         let deco = this.inputStyle;
-        let color = this.brandBorder.main;
+        let color = this.brandBorder.main.color;
         if(this.errorMsg !== '') {
          color = this.brandBgColor.alert.backgroundColor;
         }

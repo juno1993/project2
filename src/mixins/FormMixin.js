@@ -383,7 +383,7 @@ export default {
         return this.inputTimeStyle;
 
       let deco = {
-        border: this.brandBorder.main.border,
+        border: this.brandBorder.main.color,
         padding: '12px',
         fontSize: '14px'
       };
@@ -391,10 +391,10 @@ export default {
       switch (this.formType && this.formType.input) {
         case 'round':
           deco.borderRadius = this.radius;
-          deco.border = this.brandBorder.main.border;
+          deco.border = `1px solid ${this.brandBorder.main.color}`;
           break;
         case 'underline':
-          deco.borderBottom = this.brandBorder.main;
+          deco.borderBottom = this.brandBorder.main.color;
           break;
       }
 
@@ -432,7 +432,7 @@ export default {
       switch (this.formType && this.formType.box) {
         case 'round':
           deco.borderRadius = '4px';
-          deco.border = `1px solid ${this.brandBorder.main}`;
+          deco.border = `1px solid ${this.brandBorder.main.color}`;
           break;
       }
 
@@ -470,11 +470,11 @@ export default {
       switch (this.formType && this.formType.input) {
         case 'round':
           deco.borderRadius = this.radius.borderRadius;
-          deco.border = `1px solid ${this.brandBorder.main}`;
+          deco.border = `1px solid ${this.brandBorder.main.color}`;
           break;
         case 'underline':
           deco.borderRadius = 0;
-          deco.borderBottom = `1px solid ${this.brandBorder.main}`;
+          deco.borderBottom = `1px solid ${this.brandBorder.main.color}`;
           break;
       }
 

@@ -35,6 +35,7 @@ if (navigator.userAgent.match(/Android/i)
         { path: '/login', component: loadMobile('Login') },
         { path: '/mypage', component: loadMobile('MyPage') },
         { path: '/feed_create', component: loadMobile('FeedCreate') },
+        {path: '/profile', component: loadMobile('Profile')}
       ]
     }
   ]

@@ -12,24 +12,14 @@
       components: {InputImg},
       data() {
           return {
-            user: {
-              "phone": "01011111111",
-              "birth": "",
-              "profile": "",
-              "email": "test@test.com",
-              "name": "테스트x",
-              "username": "test@test.com",
-              "login_type": "email"
-            }
+
           }
+      },
+      created () {
       },
       methods: {
           saveData () {
-            this.$axios.patch(`user/3`, this.user, {
-              headers: {
-                Authorization: "Token 5d3ca1f881055beaa7d0950c8dc0112acae5ec78"
-              }
-            }).then(res => {
+            this.$axios.patch(`user/${this.user.id}`, this.user).then(res => {
               if(res.status===200) {
                 console.log('저장완료')
               }

@@ -108,10 +108,12 @@
     i
       font-size 14px
 
-  &:hover
-    .input-img-intext
-    > .input-img-close
-      display block
+  /*&:hover*/
+  /*  .input-img-intext*/
+  /*  > .input-img-close*/
+  /*    display block*/
+  .input-img-intext > .input-img-close
+    display block
 
   .input-img
     width $input-img-size
