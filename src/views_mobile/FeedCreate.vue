@@ -36,6 +36,7 @@
   import PageHeader from "../components/Common/PageHeader";
   import CInputTextarea from "../components/Form/CInputTextarea";
   import InputImg from "../components/module/common/InputImg";
+  import PageMixin from "../mixins/mobile/PageMixin";
   export default {
     name: "FeedCreate",
     components: {
@@ -44,6 +45,9 @@
       CInputTextarea,
       PageHeader
     },
+    mixins: [
+      PageMixin
+    ],
     data () {
       return {
         value: {
@@ -53,7 +57,7 @@
       }
     },
     created () {
-
+      this.login_required = true;
     },
     methods: {
       saveData () {

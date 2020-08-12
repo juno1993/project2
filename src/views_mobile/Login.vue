@@ -1,7 +1,8 @@
 <template>
   <div :style="containerStyle">
-    <div class="text-center" style="padding:80px 0 40px 0;color:#000000">
-      로고 OR 홈페이지 이름
+    <div style="font-size:25px;padding:80px 0 40px 0;color:#000000;text-align: center">
+<!--      로고 OR 홈페이지 이름-->
+      로그인 페이지
     </div>
     <div :style="[pagePadding]" style="margin-top:36px;">
       <block-login></block-login>

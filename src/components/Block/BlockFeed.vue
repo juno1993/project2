@@ -19,9 +19,13 @@
 </template>
 <script>
   import FeedSliderImg from "../FeedSliderImg";
+  import ListMixin from "../../mixins/ListMixin";
   export default {
     name: "BlockFeed",
     components: {FeedSliderImg},
+    mixins: [
+      ListMixin
+    ],
     data() {
       return {
         list: [],
@@ -29,6 +33,7 @@
       }
     },
     created() {
+      this.pageLoadType= 'infinite';
       this.getData();
     },
     methods: {
@@ -42,8 +47,13 @@
         }
       },
       getData() {
-        this.$axios.get(`public/feed`).then(res => {
+        this.url = `public/feed?page_num=1&page_length=10`;
+        this.currentPage = 1;
+        this.$axios.get(this.url).then(res => {
           this.list = res.data.data;
+          this.totalPages = res.data.total_page;
+          this.totalCount = res.data.count;
+          this.currentPage = 2;
           this.visible = true;
         })
       }
