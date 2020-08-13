@@ -367,7 +367,7 @@ export default {
       deco = {
         margin: '20px 0 6px 0',
         fontSize: '14px',
-        color: this.getColor('보조 내용 색상')
+        color: this.brandColor.sub.color
       };
       if (this.formType.align!=='block') deco.margin = 0;
       return deco;

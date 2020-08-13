@@ -25,7 +25,7 @@
   import CSnsLogin from "@/components/Form/CSnsLogin";
 
   export default {
-    name: "BlockSignin",
+    name: "BlockLogin",
     components: {
       CSnsLogin,
       CInputText,

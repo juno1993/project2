@@ -1,12 +1,11 @@
 <template>
   <div :style="containerStyle">
-    <div style="font-size:25px;padding:80px 0 40px 0;color:#000000;text-align: center">
+    <div style="font-size:25px;padding:80px 0 40px 0;text-align: center">
 <!--      로고 OR 홈페이지 이름-->
       로그인 페이지
     </div>
     <div :style="[pagePadding]" style="margin-top:36px;">
       <block-login></block-login>
-
       <div class="unselect sub-tip" style="margin-top:24px">
         <span @click="findidModal=true;$refs.findidModal.open();">아이디</span>
         <span> | </span>
@@ -73,7 +72,6 @@
         return {
           backgroundColor: 'white',
           minHeight: '100vh',
-          color: 'white',
           paddingBottom: '40px'
         }
       }

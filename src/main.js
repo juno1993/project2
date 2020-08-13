@@ -17,6 +17,16 @@ Vue.config.productionTip = false
 
 Vue.prototype.$axios = axios
 
+let FormComponents = require.context('@/components/Form', false, /CInput[A-Z].*\.vue/);
+FormComponents.keys().forEach(filename => {
+  let componentConfig = FormComponents(filename);
+  componentConfig = componentConfig.default || componentConfig;
+  let componentName = componentConfig.name || (
+    filename.replace(/^.+\//, '').replace(/\.\w+$/, '')
+  );
+  Vue.component(componentName, componentConfig);
+});
+
 Vue.mixin({
   data() {
     return {

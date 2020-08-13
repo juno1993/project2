@@ -2,7 +2,7 @@
   <div class="mobile-wrapper">
     <page-header>
       <i class="material-icons header-icon" slot="left">home</i>
-      <span class="header-title" slot="center">착한중고</span>
+      <span class="header-title" slot="center">국민폰</span>
     </page-header>
 
     <div :style="[pagePadding]">

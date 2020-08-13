@@ -49,7 +49,8 @@
           position: 'fixed',
           top: 0,
           zIndex: 10,
-          width: '100%'
+          width: '100%',
+          backgroundColor: 'white'
         };
         return deco;
       }
